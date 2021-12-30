@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:radio_caca_market_analisis/infrastructure/app_error.dart';
 import 'dart:async';
 
 import 'package:radio_caca_market_analisis/infrastructure/infrastructure.dart';

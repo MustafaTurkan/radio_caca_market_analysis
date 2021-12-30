@@ -1,5 +1,6 @@
-import 'package:fashion/infrastructure/infrastructure.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:radio_caca_market_analisis/infrastructure/infrastructure.dart';
 
 class DefaultThemeColors extends IAppColors {
   //primartPale 0xffE8F0FE
@@ -8,19 +9,19 @@ class DefaultThemeColors extends IAppColors {
   @override
   Color get canvasDark => Colors.black;
   @override
-  Color get canvas => Color(0xffF1F3F4); //F8F6F6 , F2F2F2
+  Color get canvas => const Color(0xffF1F3F4); //F8F6F6 , F2F2F2
   @override
-  Color get canvasLight => Color(0xffffffff);
+  Color get canvasLight => const Color(0xffffffff);
   @override
   Color get disabled => fontPale.lighten(0.5);
   @override
-  Color get divider => Color(0xffDADCE0);
+  Color get divider => const Color(0xffDADCE0);
   @override
-  Color get success => Color(0xff3dc954).lighten(0.3);
+  Color get success => const Color(0xff3dc954).lighten(0.3);
   @override
-  Color get error => Color(0xfff54d53).lighten(0.3);
+  Color get error => const Color(0xfff54d53).lighten(0.3);
   @override
-  Color get warning => Color(0xfffd791c);
+  Color get warning => const Color(0xfffd791c);
   @override
   Color get info => primary;
   @override
@@ -28,7 +29,7 @@ class DefaultThemeColors extends IAppColors {
   @override
   Color get fontPale => primary;
   @override
-  Color get fontLight => Color(0xffffffff);
+  Color get fontLight => const Color(0xffffffff);
   @override
   Color get primary => Colors.purple;
   @override
@@ -38,13 +39,13 @@ class DefaultThemeColors extends IAppColors {
   @override
   Color get toggleableActiveColor => primary;
   @override
-  Color get inputFillColor => Color(0xFFf2f6fd);
+  Color get inputFillColor => const Color(0xFFf2f6fd);
 
   //Inkwell
   @override
-  Color get splash => Color(0xffa9cbf7).withOpacity(0.5);
+  Color get splash => const Color(0xffa9cbf7).withOpacity(0.5);
   @override
-  Color get highlight => Color(0xffa9cbf7).withOpacity(0.3);
+  Color get highlight => const Color(0xffa9cbf7).withOpacity(0.3);
 }
 
 class DefaultThemeTextStyles extends IAppTextStyles {
@@ -109,8 +110,6 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
     primaryColorLight: appColors.primary,
     primaryColorDark: appColors.primary,
     primaryColorBrightness: Brightness.dark,
-    accentColor: appColors.accent,
-    accentColorBrightness: Brightness.dark,
     canvasColor: appColors.canvasLight,
     disabledColor: appColors.disabled,
     scaffoldBackgroundColor: appColors.canvasLight,
@@ -123,13 +122,13 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
     toggleableActiveColor: appColors.toggleableActiveColor,
 
     toggleButtonsTheme: ToggleButtonsThemeData(
-      constraints: BoxConstraints(minWidth: kMinInteractiveDimension, minHeight: kMinInteractiveDimension * 0.8),
+      constraints: const BoxConstraints(minWidth: kMinInteractiveDimension, minHeight: kMinInteractiveDimension * 0.8),
       borderRadius: buttonBorderRadius,
       color: appColors.font,
       selectedColor: appColors.primary,
       disabledColor: appColors.disabled,
     ),
-    bottomSheetTheme: BottomSheetThemeData(
+    bottomSheetTheme: const BottomSheetThemeData(
       elevation: 0.5,
     ),
 
@@ -140,17 +139,17 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
     ),
     textSelectionTheme: baseTheme.textSelectionTheme
         .copyWith(selectionHandleColor: appColors.primary, selectionColor: appColors.primary.lighten(0.8)),
-    popupMenuTheme: PopupMenuThemeData(elevation: 0.5),
+    popupMenuTheme: const PopupMenuThemeData(elevation: 0.5),
     floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: appColors.primary, elevation: 0.5),
     dividerTheme: DividerThemeData(color: appColors.divider, space: 1),
     tabBarTheme: TabBarTheme(labelColor: appColors.primary, unselectedLabelColor: appColors.font),
 
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: appColors.canvasDark),
-      textTheme: _appBarTextTheme(baseTheme.primaryTextTheme, appColors.font, fontFamily),
+      titleTextStyle: _appBarTextTheme(baseTheme.primaryTextTheme, appColors.font, fontFamily).subtitle1,
       color: appColors.canvasLight,
       elevation: 0.5,
-      brightness: Brightness.light,
+      systemOverlayStyle: SystemUiOverlayStyle.light,
     ),
     bottomAppBarTheme: BottomAppBarTheme(
       color: appColors.canvasLight,
@@ -177,7 +176,7 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
     ),
 
     cardTheme: CardTheme(
-      margin: EdgeInsets.all(1),
+      margin: const EdgeInsets.all(1),
       color: appColors.canvasLight,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: cardBorderRadius),
@@ -190,7 +189,6 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
 
     textTheme: ThemeUtils.textThemeCopyWith(baseTheme.textTheme, appColors.font, fontFamily),
     primaryTextTheme: ThemeUtils.textThemeCopyWith(baseTheme.primaryTextTheme, appColors.fontLight, fontFamily),
-    accentTextTheme: ThemeUtils.textThemeCopyWith(baseTheme.accentTextTheme, appColors.fontLight, fontFamily),
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: TextStyle(color: appColors.font),
       hintStyle: TextStyle(color: appColors.fontPale.withOpacity(0.7)),
@@ -199,7 +197,7 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
       suffixStyle: TextStyle(color: appColors.fontPale),
       counterStyle: TextStyle(color: appColors.fontPale),
       errorStyle: TextStyle(color: appColors.error.withOpacity(0.7)),
-      contentPadding: EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.all(10),
       fillColor: appColors.inputFillColor,
       filled: true,
       isDense: true,
@@ -247,12 +245,11 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
       onSurface: appColors.font,
     ),
     primaryIconTheme: IconThemeData(color: appColors.canvasLight),
-    accentIconTheme: IconThemeData(color: appColors.canvasLight),
     iconTheme: IconThemeData(color: appColors.canvasDark),
     //use cupertino slide effect
-    pageTransitionsTheme: PageTransitionsTheme(builders: {
-      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+    pageTransitionsTheme: const PageTransitionsTheme(builders: {
+      TargetPlatform.android:  CupertinoPageTransitionsBuilder(),
+      TargetPlatform.iOS:  CupertinoPageTransitionsBuilder(),
     }),
   );
 
@@ -261,19 +258,19 @@ AppThemeData buildDefaultTheme(BuildContext context, {IAppColors? colors}) {
 
 class AlternativeColors1 extends DefaultThemeColors {
   @override
-  Color get accent => Color(0xff2E4378);
+  Color get accent => const Color(0xff2E4378);
   @override
-  Color get primary => Color(0xff0083FF);
+  Color get primary => const Color(0xff0083FF);
   @override
-  Color get canvasDark => Color(0xffe7edf7);
+  Color get canvasDark => const Color(0xffe7edf7);
   @override
-  Color get canvas => Color(0xffF6F8FC);
+  Color get canvas => const Color(0xffF6F8FC);
   @override
-  Color get canvasLight => Color(0xffffffff);
+  Color get canvasLight => const Color(0xffffffff);
   @override
-  Color get divider => Color(0xffd9e1f2);
+  Color get divider => const Color(0xffd9e1f2);
   @override
-  Color get font => Color(0xff2E4378);
+  Color get font => const Color(0xff2E4378);
   @override
-  Color get fontPale => Color(0xff8291b8);
+  Color get fontPale => const Color(0xff8291b8);
 }
