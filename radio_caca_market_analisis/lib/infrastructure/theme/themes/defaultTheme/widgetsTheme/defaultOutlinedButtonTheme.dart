@@ -10,6 +10,6 @@ OutlinedButtonThemeData defaultOutlinedButtonTheme(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
           primary: colors.primary,
           backgroundColor: colors.accent,
-          side: BorderSide(color: colors.primary, width: 0.5),
+          side: BorderSide(color: colors.primary!, width: 0.5),
           textStyle: textStyles.button.accentRegular));
 }

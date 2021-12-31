@@ -5,7 +5,7 @@ import 'package:radio_caca_market_analisis/infrastructure/theme/themes/defaultTh
 AppBarTheme defaultAppBarTheme(DefaultThemeColors colors, TextTheme textTheme) {
   return AppBarTheme(
     centerTitle: true,
-    backgroundColor: colors.canvasAccent,
+    backgroundColor: colors.primary,
     elevation: 0,
     // toolbarTextStyle: textTheme.headline6,
     // textTheme: textTheme,

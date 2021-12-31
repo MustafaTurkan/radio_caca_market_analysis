@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 
 extension SizeExtensions on Size {
-   
   /// Percent of the screen height
   /// value = 0..100
   double heightPercent(double value) {

@@ -11,7 +11,7 @@ AppThemeData buildDefaultTheme(BuildContext context) {
   var baseTheme = Theme.of(context);
   var initialTheme = ThemeData.light().copyWith(
     textTheme: ThemeUtils.textThemeCopyWith(
-        baseTheme.textTheme, appColors.primary, fontFamily),
+        baseTheme.textTheme, appColors.primary!, fontFamily),
   );
 
   var textStyles = DefaultThemeTextStyles(initialTheme, appColors);

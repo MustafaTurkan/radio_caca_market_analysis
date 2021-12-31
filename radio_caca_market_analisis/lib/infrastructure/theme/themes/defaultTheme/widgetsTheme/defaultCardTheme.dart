@@ -4,6 +4,6 @@ import 'package:radio_caca_market_analisis/infrastructure/theme/themes/defaultTh
 CardTheme defaultCardTheme(DefaultThemeColors colors) {
   return CardTheme(
       elevation: 0,
-      color: colors.canvasPrimaryPale,
-      shape: RoundedRectangleBorder());
+      color: colors.canvasPrimary,
+      shape: const RoundedRectangleBorder());
 }

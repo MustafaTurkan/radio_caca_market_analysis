@@ -8,8 +8,8 @@ BottomNavigationBarThemeData defaultBottomNavigationBarTheme(
       showSelectedLabels: false,
       showUnselectedLabels: false,
       selectedItemColor: colors.primary,
-      unselectedItemColor: colors.primary.withOpacity(0.7),
+      unselectedItemColor: colors.primary?.withOpacity(0.7),
       selectedIconTheme: IconThemeData(size: 26, color: colors.primary),
       unselectedIconTheme:
-          IconThemeData(size: 22, color: colors.primary.withOpacity(0.6)));
+          IconThemeData(size: 22, color: colors.primary?.withOpacity(0.6)));
 }

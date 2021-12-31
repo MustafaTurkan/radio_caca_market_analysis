@@ -1,19 +1,19 @@
 import 'package:flutter/widgets.dart';
 
 abstract class IAppColors {
-  Color get primary;
-  Color get accent;
-  Color get canvasPrimary;
-  Color get canvasAccent;
-  Color get canvasAccentPale;
-  Color get fontPrimary;
-  Color get fontAccent;
-  Color get fontAccentPale;
-  Color get fontPrimaryPale;
-  Color get error;
-  Color get succes;
-  Color get canvasPrimaryPale;
-  Color get disabledColor;
+  Color? get primary;
+  Color? get accent;
+  Color? get canvasPrimary;
+  Color? get canvasAccent;
+  Color? get canvasAccentPale;
+  Color? get fontPrimary;
+  Color? get fontAccent;
+  Color? get fontAccentPale;
+  Color? get fontPrimaryPale;
+  Color? get error;
+  Color? get succes;
+  Color? get canvasPrimaryPale;
+  Color? get disabledColor;
 }
 
 Color darken(Color c, [int percent = 10]) {

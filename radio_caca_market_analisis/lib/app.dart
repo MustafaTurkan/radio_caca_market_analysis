@@ -91,8 +91,35 @@ class _AppWidgetState extends State<AppWidget> {
               appBar: AppBar(
                 title: const Text('Deneme'),
               ),
-              body: const Center(
-                child: Text('Deneme'),
+              body: Column(
+                children: [
+                  Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          // Add one stop for each color. Stops should increase from 0 to 1
+                          stops: [0.1, 0.7],
+                          colors: [
+                            Color(0xff22242a),
+                            Color(0xff4E545C)
+//                        Colors.blue[400],
+//                        Colors.blue[300],
+                          ],
+                          // stops: [0.0, 0.1],
+                        ),
+                      ),
+                      height: 200),
+                  const Card(
+                    elevation: 100,
+                    child: ListTile(
+                      title:
+                          Text('Test', style: TextStyle(color: Colors.white)),
+                      subtitle: Text('Test',
+                          style: TextStyle(color: Colors.yellowAccent)),
+                    ),
+                  ),
+                ],
               ),
             ));
       },

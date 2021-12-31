@@ -14,21 +14,21 @@ ElevatedButtonThemeData defaultElevatedButtonTheme(
       foregroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.pressed)) {
-            return colors.fontAccent;
+            return colors.fontAccent!;
           } else if (states.contains(MaterialState.disabled)) {
-            return colors.fontAccent.withOpacity(0.6);
+            return colors.fontAccent!.withOpacity(0.6);
           }
-          return colors.fontAccent;
+          return colors.fontAccent!;
         },
       ),
       backgroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.pressed)) {
-            return colors.primary;
+            return colors.primary!;
           } else if (states.contains(MaterialState.disabled)) {
-            return colors.primary.withOpacity(0.6);
+            return colors.primary!.withOpacity(0.6);
           }
-          return colors.primary;
+          return colors.primary!;
         },
       ),
     ),

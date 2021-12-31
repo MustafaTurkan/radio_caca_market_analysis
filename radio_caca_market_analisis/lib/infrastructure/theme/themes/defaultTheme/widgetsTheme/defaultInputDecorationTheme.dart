@@ -5,7 +5,7 @@ import 'package:radio_caca_market_analisis/infrastructure/theme/themes/defaultTh
 InputDecorationTheme defaultInputDecorationTheme(
     DefaultThemeColors colors, DefaultThemeTextStyles textStyles) {
   InputBorder border() {
-    return UnderlineInputBorder(borderSide: BorderSide(color: colors.primary));
+    return UnderlineInputBorder(borderSide: BorderSide(color: colors.primary!));
   }
 
   return InputDecorationTheme(
