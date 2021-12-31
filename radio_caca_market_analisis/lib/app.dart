@@ -87,7 +87,14 @@ class _AppWidgetState extends State<AppWidget> {
             builder: _builder,
             navigatorKey: AppNavigator.key,
             navigatorObservers: [AppNavigator.routeObserver],
-            home: Container());
+            home: Scaffold(
+              appBar: AppBar(
+                title: const Text('Deneme'),
+              ),
+              body: const Center(
+                child: Text('Deneme'),
+              ),
+            ));
       },
     );
   }
